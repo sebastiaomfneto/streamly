@@ -1,10 +1,16 @@
 import { Route, Switch } from 'react-router-dom';
+import { ThemeProvider, CssBaseline } from '@material-ui/core';
+
+import { theme } from './theme';
 
 export function App() {
   return (
-    <Switch>
-      <Route path="/" exact render={() => <div />} />
-    </Switch>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Switch>
+        <Route path="/" exact render={() => <div />} />
+      </Switch>
+    </ThemeProvider>
   );
 }
 
