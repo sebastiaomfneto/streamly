@@ -1,7 +1,101 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "streamly-app": {
+      "root": "apps/streamly-app",
+      "sourceRoot": "apps/streamly-app/src",
+      "projectType": "application",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/streamly-app",
+            "index": "apps/streamly-app/src/index.html",
+            "main": "apps/streamly-app/src/main.tsx",
+            "polyfills": "apps/streamly-app/src/polyfills.ts",
+            "tsConfig": "apps/streamly-app/tsconfig.app.json",
+            "assets": [
+              "apps/streamly-app/src/favicon.ico",
+              "apps/streamly-app/src/assets"
+            ],
+            "styles": ["apps/streamly-app/src/styles.css"],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/streamly-app/src/environments/environment.ts",
+                  "with": "apps/streamly-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "streamly-app:build",
+            "hmr": true
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "streamly-app:build:production",
+              "hmr": false
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/streamly-app/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/streamly-app"],
+          "options": {
+            "jestConfig": "apps/streamly-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/react"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "style": "css",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "css"
+      },
+      "library": {
+        "style": "css",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "streamly-app"
 }
