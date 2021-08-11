@@ -27,6 +27,9 @@
     ]
   },
   "projects": {
+    "streamly-api": {
+      "tags": []
+    },
     "streamly-app": {
       "tags": []
     }
