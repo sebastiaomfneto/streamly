@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "nx": "nx",
-    "start": "nx run-many --target=serve --projects=streamly-app,streamly-api",
+    "start": "nx run-many --parallel --target=serve --projects=streamly-app,streamly-api",
     "start:app": "nx serve streamly-app",
     "start:api": "nx serve streamly-api",
     "build": "nx build",
