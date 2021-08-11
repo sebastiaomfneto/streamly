@@ -3,4 +3,6 @@
 
 export const environment = {
   production: false,
+  apiSignalingUrl: '',
+  iceServers: [{ urls: 'stun:74.125.142.127:19302' }],
 };
