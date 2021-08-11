@@ -1,4 +1,4 @@
-import { FC, MutableRefObject, useCallback, useEffect, useRef } from 'react';
+import { FC, MutableRefObject, useCallback, useRef } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import {
   makeStyles,
