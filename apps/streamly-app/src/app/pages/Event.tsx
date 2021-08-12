@@ -27,15 +27,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const EventPage: FC<EventPageProps> = ({ history, match }) => {
+  const { eventId } = match.params;
+
   const videoRef =
     useRef<HTMLVideoElement>() as MutableRefObject<HTMLVideoElement>;
 
   const { mediaStream } = useUserMedia(videoRef);
 
-  const { participants } = usePeerData(match.params.eventId, mediaStream);
+  const { participants } = usePeerData(eventId, mediaStream);
 
   const handleClose = useCallback(() => {
-    history.push('/');
+    history.push('/events');
   }, [history]);
 
   const styles = useStyles();
