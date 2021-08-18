@@ -86,7 +86,7 @@ const EventsPage: FC<EventsPageProps> = ({ history }) => {
                 <TextField
                   variant="outlined"
                   size="small"
-                  label="Digite o código da reunião"
+                  label="Enter meeting code"
                   value={eventId}
                   onChange={(e) => setEventId(e.target.value)}
                   InputProps={{
