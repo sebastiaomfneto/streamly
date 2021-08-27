@@ -20,6 +20,8 @@ Streamly is an app to video conference powered by WebRTC.
 
 ![App Screenshot](./docs/screenshot-1.png)
 
+---
+
 ![App Screenshot](./docs/screenshot-2.png)
  
 ## Run Locally
