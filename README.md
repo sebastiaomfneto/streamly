@@ -2,11 +2,6 @@
 
 Streamly is an app to video conference powered by WebRTC.
 
-## Badges
-
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-[![Dependencies](https://img.shields.io/david/sebastiaomfneto/streamly)](https://img.shields.io/david/sebastiaomfneto/streamly)
-
 ## Acknowledgements
 
  - [Typescript](https://www.typescriptlang.org/docs/)
